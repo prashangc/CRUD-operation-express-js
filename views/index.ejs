@@ -1,0 +1,66 @@
+<%- include('./utils/header.ejs')%>
+
+<div class="row">
+  <div class="addStudentCard">
+    <h1>Add Students</h1>
+    <form method="post">
+      <label for="uname"><b>Username</b></label>
+      <br />
+      <br />
+      <input type="text" placeholder="Enter Username" name="name" required />
+      <br />
+      <br />
+      <label for="psw"><b>Age</b></label>
+      <br />
+      <br />
+      <input type="number" placeholder="Enter age" name="age" required />
+      <br />
+      <br />
+      <label for="psw"><b>Fees</b></label>
+      <br />
+      <br />
+      <input type="number" placeholder="Enter fees" name="fees" required />
+      <br />
+      <br />
+      <button type="submit">Add Student</button>
+    </form>
+  </div>
+  <div class="showStudentListCard">
+    <h1>List of Students</h1>
+    <table class="myTable">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Fees</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% var i = 1%> <% data.forEach((element) => { %>
+        <tr>
+          <td><%=i++%></td>
+          <td><%=element.name%></td>
+          <td><%=element.age%></td>
+          <td><%=element.fees%></td>
+          <td>
+            <form action="/student/update/<%=element._id%>" method="get">
+              <button>
+                <i class="fa fa-solid fa-edit"></i>
+              </button>
+            </form>
+            <form action="/student/delete/<%=element._id%>" method="post">
+              <button>
+                <i class="fa fa-solid fa-trash"></i>
+              </button>
+            </form>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('./utils/footer.ejs')%>

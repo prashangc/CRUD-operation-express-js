@@ -1,0 +1,49 @@
+<%- include('./utils/header.ejs')%>
+
+<div class="addStudentCard">
+  <h1>Update Student</h1>
+  <form method="post" action="/student/update/<%=data._id%>">
+    <label for="uname"><b>Username</b></label>
+    <br />
+    <br />
+    <input
+      type="text"
+      placeholder="Enter Username"
+      name="name"
+      required
+      value="<%=data.name%>"
+    />
+    <br />
+    <br />
+    <label for="psw"><b>Age</b></label>
+    <br />
+    <br />
+    <input
+      type="number"
+      placeholder="Enter age"
+      name="age"
+      required
+      value="<%=data.age%>"
+    />
+    <br />
+    <br />
+    <label for="psw"><b>Fees</b></label>
+    <br />
+    <br />
+    <input
+      type="number"
+      placeholder="Enter fees"
+      name="fees"
+      required
+      value="<%=data.fees%>"
+    />
+    <br />
+    <br />
+    <button type="submit">Update</button>
+    <br />
+    <br />
+    <button type="submit">Back</button>
+  </form>
+</div>
+
+<%- include('./utils/footer.ejs')%>

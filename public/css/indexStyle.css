@@ -1,0 +1,40 @@
+table, th, td {
+    border:1px solid black;
+  }
+body {
+  background-color: aquamarine;
+  margin: 20px;
+  
+  .row {
+    display: flex;
+    width: 100%;
+
+    .addStudentCard {
+      padding: 20px;
+      background-color: blueviolet;
+      width: 100%;
+    }
+
+    .showStudentListCard {
+      padding: 20px;
+      width: 100%;
+      background-color: cornsilk;
+
+    .myTable{
+        width: 100%;
+        border: solid black thin;
+    }            
+        
+
+      .edit {
+        padding-left: 10px;
+        color: blue;
+      }
+
+      .delete {
+        padding-left: 10px;
+        color: red;
+      }
+    }
+  }
+}
